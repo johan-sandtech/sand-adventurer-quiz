@@ -142,9 +142,10 @@ const job = k => JOBS[k].id ? GH + JOBS[k].id + "?gh_src=" + CONFIG.GH_SRC : CON
    ============================================================ */
 const TYPES = {
   gonzo:{ name:"The Gonzo", cluster:"Action, Ownership & Execution", accent:"#F54343", bg:"#0A0A0A",
-    line:"You don't cover the story. You go and live it.",
-    why:"Hunter S. Thompson didn't cover the story from the press box. He rode with the Hells Angels and wrote it from inside. That's you. You don't wait for the brief, the permission or the perfect plan. You go in, get your hands dirty, and come back with the thing nobody else could have written.",
-    hero:["Hunter S. Thompson didn't cover the story from the press box. He rode with the Hells Angels and wrote it from inside. You don't wait for the brief, the permission or the perfect plan.","You go in, get your hands dirty, and come back with the thing nobody else could have written."],
+    line:"I don't cover the story. I go and live it.",
+    why:"Most reporters watch from the press box and file a tidy story. Hunter S. Thompson got on the back of the motorbike, rode with the Hells Angels for a year, and wrote it from the inside. They called it gonzo: you don't observe the thing, you become part of it. That's you. You don't wait for the brief, the permission or the perfect plan. You get in the room, get your hands dirty, and come back with the thing nobody could have written from a desk.",
+    note:"Gonzo is from gonzo journalism, Hunter S. Thompson's way of reporting from inside the story instead of observing it. Fear and Loathing in Las Vegas is the famous one. At Sand it means the engineer who's in the control room, not on the call about the control room.",
+    hero:["Most reporters watch from the press box. Hunter S. Thompson rode with the Hells Angels and wrote it from the inside. That's gonzo, and that's you: no waiting for the brief, the permission or the perfect plan.", "You get in the room, get your hands dirty, and come back with the thing nobody else could have written."],
     principles:["Decide","Get Stuff Done","Do Hard Things"],
     says:"You're the one on the plane before anyone's asked. Ambiguity doesn't scare you, it wakes you up, and you'd rather meet the system you're building for than guess at it from a desk.",
     proof:"A city's operations centre stood up in days, not months. Someone had to be on that plane.",
@@ -153,21 +154,22 @@ const TYPES = {
     post:"Turns out I'm a Gonzo. Took the Sand Technologies Adventurer quiz{where} and apparently I don't cover the story, I go and live it. {tags}",
     jobs:["fde","se"] },
   mech:{ name:"The Mechanic", cluster:"Operational Excellence & Simplicity", accent:"#F1AE0A", bg:"#0A0A0A",
-    line:"Find the part that's actually broken. Fix that. Properly.",
-    why:"A good mechanic doesn't read you the brochure. She listens to the engine, finds the one part that's actually wrong, and fixes that. Properly. No extra bolts. That's you. Complicated problems, simple fixes, done right, and you won't hand the keys back until it runs.",
-    hero:["A good mechanic doesn't read you the brochure. She listens to the engine and finds the one part that's actually wrong. You'd rather fix that properly than add extra bolts.","Complicated problems, simple fixes, done right."],
+    line:"I find the part that's actually broken and fix that. Properly.",
+    why:"A good mechanic doesn't read you the brochure or swap every part until the noise stops. She listens to the engine, finds the one thing that's actually wrong, and fixes that. Properly. No extra bolts, no \"while we're in there\". That's you. Complicated problems, simple fixes, done right. You don't hand the keys back until it runs, and you don't trust a fix you can't explain in a sentence.",
+    note:"K.I.S.S is Keep It Simple, Stupid, a line from 1960s aircraft engineering: a jet should be fixable by an average mechanic in the field with basic tools. Raise The Bar is the other half: simple, but never sloppy.",
+    hero:["A good mechanic doesn't swap every part until the noise stops. She listens to the engine, finds the one thing that's actually wrong, and fixes that. You'd rather do that properly than add bolts.", "Complicated problems. Simple fixes. Done right."],
     principles:["K.I.S.S","Raise The Bar"],
     says:"You refuse to let the solution be as complicated as the problem. A broken thing is an invitation, and “works in the demo” is not the bar. You want your work running in a live system someone depends on, not in a report nobody reads.",
     proof:"Planning hundreds of telecom networks from data that was never meant to be planned from.",
     watch:"Loving the engine more than the drive. The fix only counts when the person who runs the system uses it.",
-    tie:"I'm weirdly attracted to maintaining impeccable infrastructure.",
+    tie:"Grease on my hands, skill in my mind, and passion in my heart.",
     post:"Turns out I'm a Mechanic. Took the Sand Technologies Adventurer quiz{where} and apparently I find the part that's actually broken and fix that, properly. {tags}",
     jobs:["se","de"] },
   surf:{ name:"The Surfer", cluster:"Clients, Integrity & the Long Game", accent:"#80A2B4", bg:"#0A0A0A",
-    line:"Read the water. The ocean's in charge, and you're fine with that.",
+    line:"I read the water. The ocean's in charge, and I'm fine with that.",
     why:"Surfers will drive for hours on a rumour of a good wave. Then they'll sit in the water and wait. They read it, they respect it, and they know the ocean's in charge, not them. That's you. You take the client's world as it is, you tell them the truth about the conditions, and you're still there next season. Laid back on the surface. Relentless underneath.",
-    note:"Surf like Yvon is Yvon Chouinard, the Patagonia founder: do the right thing, play the long game, go surfing when the waves are good.",
-    hero:["Surfers will drive for hours on a rumour of a good wave, then sit in the water and wait. You read the conditions, you tell the truth about them, and you're still there next season.","Laid back on the surface. Relentless underneath."],
+    note:"Surf like Yvon is Yvon Chouinard, the Patagonia founder: do the right thing, play the long game, go surfing when the waves are good. The client is the ocean. You don't argue with it; you learn it.",
+    hero:["Surfers will drive for hours on a rumour of a good wave, then sit in the water and wait. You read the conditions, you tell the truth about them, and you're still there next season.", "Laid back on the surface. Relentless underneath."],
     principles:["Our Clients Run the Company","Surf like Yvon","Play The Long Game"],
     says:"You're the one the operator calls. You'd rather say the hard thing today than the comfortable thing in six months, and you measure success by whether the system's still in use a year on, by people who'd fight to keep it.",
     proof:"Helping run a capital city's water supply for years. Not launching it and leaving.",
@@ -176,9 +178,10 @@ const TYPES = {
     post:"Turns out I'm a Surfer. Took the Sand Technologies Adventurer quiz{where} and apparently I read the water and the ocean's in charge. {tags}",
     jobs:["fde","pd"] },
   capt:{ name:"The Captain", cluster:"Collaboration & Inclusion", accent:"#EEEEEE", bg:"#202020",
-    line:"Know every role. Get everyone home.",
-    why:"A captain's job isn't to be the best sailor on the boat. It's to know every role, make sure every voice gets heard when it matters, and get everyone home. That's you. You own the outcome, you grow the crew, and you're quietly training the next captain the whole time.",
-    hero:["A captain's job isn't to be the best sailor on the boat. It's to know every role and make sure every voice gets heard when it matters. You own the outcome and you grow the crew.","You're quietly training the next captain the whole time."],
+    line:"I know every role. I get everyone home.",
+    why:"A captain is almost never the best sailor on the boat. The job is different: know every role well enough to cover it, make sure the quiet one's warning gets heard before the storm, and get everyone home. The crew is the point. The captain is how the crew works. That's you. You own the outcome, not just your part of it. You grow the crew instead of carrying it, and you're quietly training the next captain the whole time.",
+    note:"Each One, Teach Ten is Sand's rule that whatever you learn, you pass on to ten people. Everybody Is Welcome is why the crew is worth listening to in the first place: teams across four continents, every kind of background, all on the same boat.",
+    hero:["A captain is almost never the best sailor on the boat. The job is to know every role, make sure the quiet one gets heard before the storm, and get everyone home. You own the outcome and you grow the crew.", "You're quietly training the next captain the whole time."],
     principles:["Each One, Teach Ten","Everybody Is Welcome"],
     says:"You own the outcome, not just your part of it. You notice who isn't being heard, you teach rather than carry, and you'd rather ten people could do the thing than be the only one who can.",
     proof:"Training a ministry's own data team so the system keeps working long after we've gone.",
@@ -187,9 +190,10 @@ const TYPES = {
     post:"Turns out I'm a Captain. Took the Sand Technologies Adventurer quiz{where} and apparently I know every role and get everyone home. {tags}",
     jobs:["tl","pd"] },
   pack:{ name:"The Backpacker", cluster:"Growth, Innovation & Resilience", accent:"#F1AE0A", bg:"#0A0A0A",
-    line:"Take the road nobody recommended. Come back with the story.",
-    why:"Backpackers pack light, take the road nobody recommended, and get lost on purpose. The wrong turn is the story. They come home different. That's you. New country, new system, new domain, no map: good. You'll learn it, you'll get some of it wrong, and you'll write the guide for whoever comes next.",
-    hero:["Backpackers pack light, take the road nobody recommended, and get lost on purpose. The wrong turn is the story. New system, new domain, no map: good.","You'll learn it, get some of it wrong, and write the guide for whoever comes next."],
+    line:"I take the road nobody recommended, and come back with the story.",
+    why:"Backpackers pack light, take the road nobody recommended, and get lost on purpose. They learn the local way of doing things instead of bringing their own. The wrong turn is the story. They come home different, and they've got notes for whoever goes next. That's you. New country, new system, new domain, no map: good. You'll learn it from the people who live there, get some of it wrong, and write the guide for whoever comes after.",
+    note:"There Is No Failure is the Backpacker's whole philosophy: a wrong turn isn't a mistake, it's information. Choose Growth and Pioneer are why they keep going places the guidebook doesn't cover.",
+    hero:["Backpackers pack light, take the road nobody recommended, and get lost on purpose. The wrong turn is the story. New system, new domain, no map: good.", "You'll learn it, get some of it wrong, and write the guide for whoever comes next."],
     principles:["Choose Growth","Pioneer","There Is No Failure"],
     says:"You go back to first principles because the guidebook is usually wrong. A wrong turn is the most useful data you'll get all month, and you'd rather be somewhere nobody's mapped than somewhere comfortable.",
     proof:"Taking the same approach from water pipes to a racing team's pit wall, and finding out what carries over.",
@@ -552,22 +556,20 @@ function result(){
     <div style="padding:36px 24px 24px;display:flex;flex-direction:column;gap:32px;border-top:1px solid var(--oil)">
       ${[["WHAT IT LOOKS LIKE AT SAND",T.says],["THE KIND OF THING YOU’D DO",T.proof],["WHERE YOU’D FIT",fit[0]],["WATCH OUT FOR",T.watch]].map(([h,p])=>`<div style="display:flex;flex-direction:column;gap:10px"><div class="dh">${h}</div><div style="font-size:17px;line-height:1.5;text-wrap:pretty">${esc(p)}</div></div>`).join("")}
       <div style="border:1px solid var(--squash);padding:20px;display:flex;flex-direction:column;gap:10px">
-        <div class="dh">AT_THE_BOOTH</div>
-        <div style="font-size:19px;font-weight:600;line-height:1.3;letter-spacing:-.01em;text-wrap:pretty">Show this screen to claim your merch, and ask the Sand team about open roles.</div>
+        <div class="dh">YOUR_NEXT_MOVE</div>
+        <div style="font-size:19px;font-weight:600;line-height:1.3;letter-spacing:-.01em;text-wrap:pretty">Show this screen at the booth. There's merch with your name on it.</div>
+        <div style="font-size:16px;line-height:1.45;color:var(--soft)">Then tell people what you are.</div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-top:-8px">
-        ${btn("SHARE_YOUR_RESULT","↗","shareScreen()")}
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:-8px">
+        ${btn("MAKE_IT_OFFICIAL","↗","shareScreen()")}
+        <div class="row" style="gap:12px;flex-wrap:wrap"><button class="txt" onclick="meet(${n-1})">SEE_THE_OTHER_FOUR</button><button class="txt" onclick="document.getElementById('roles').scrollIntoView({behavior:'smooth'})">ROLES_FOR_A_${esc(T.name.replace("The ","").toUpperCase())}</button></div>
       </div>
-      <div style="display:flex;flex-direction:column">
+      <div id="roles" style="display:flex;flex-direction:column">
         <div class="dh" style="padding-bottom:12px">ROLES CLOSEST TO YOUR TYPE</div>
         ${jobs.map(k=>`<a class="jrow" href="${job(k)}" target="_blank" rel="noopener" onclick="mark('job')">
           <div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:18px;font-weight:700;letter-spacing:-.01em">${esc(JOBS[k].t)}</div>${JOBS[k].l?`<div class="mono" style="font-size:12px;color:var(--mute);text-transform:uppercase">${esc(JOBS[k].l)}</div>`:""}</div>
           <div style="font-size:20px">↗</div></a>`).join("")}
         <a href="${CONFIG.CAREERS}" target="_blank" rel="noopener" class="row mono" style="min-height:52px;border-top:1px solid var(--gravel);border-bottom:1px solid var(--gravel);font-size:12px;letter-spacing:.1em;text-decoration:none"><span>ALL_ROLES</span><span>↗</span></a>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:10px">
-        ${btn("SEE_ALL_FIVE_ADVENTURERS","→",`meet(${n-1})`,"ghost")}
-        ${btn("FOLLOW_THE_ADVENTURE","→","follow()","ghost")}
       </div>
       ${FOOT}
     </div>
@@ -578,15 +580,14 @@ function follow(){
   const soc = [["LinkedIn",CONFIG.SOCIAL.linkedin],["Instagram",CONFIG.SOCIAL.instagram],["X",CONFIG.SOCIAL.x],["YouTube",CONFIG.SOCIAL.youtube]];
   render(`<div class="screen">
     ${LOGO}
-    <div class="mono" style="font-size:13px;letter-spacing:.12em;color:var(--coral);margin-top:64px">#BUILDWHATMATTERS</div>
-    <div class="h1" style="font-size:52px;line-height:.92;margin-top:16px">Follow the adventure.</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:32px">
-      ${soc.map(([n,u],k)=>`<a class="tile" href="${u}" target="_blank" rel="noopener" onclick="mark('follow')">
-        <div class="row mono" style="font-size:11px;color:var(--mute)"><span>0${k+1}</span><span style="color:var(--text);font-size:16px">↗</span></div>
-        <div style="font-size:20px;font-weight:700;letter-spacing:-.02em">${n}</div></a>`).join("")}
+    <div class="mono" style="font-size:13px;letter-spacing:.12em;color:var(--coral);margin-top:64px">ONE_LAST_THING</div>
+    <div class="h1" style="font-size:52px;line-height:.92;margin-top:16px">The field's waiting.</div>
+    <div style="font-size:17px;line-height:1.5;color:var(--soft);margin-top:20px;text-wrap:pretty">Every system we work on is run by people who need better than instinct and old data. That's the job. If it sounds like yours, you know where we are.</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:32px">
+      <a class="btn" href="${CONFIG.CAREERS}" target="_blank" rel="noopener" onclick="mark('job')"><span>SEE_OPEN_ROLES</span><span>↗</span></a>
+      <a class="btn ghost" href="${CONFIG.SOCIAL.team}" target="_blank" rel="noopener" onclick="mark('follow')"><span>MEET_THE_TEAM_ON_YOUTUBE</span><span>↗</span></a>
     </div>
-    <a class="btn ghost" href="${CONFIG.SOCIAL.team}" target="_blank" rel="noopener" style="margin-top:8px" onclick="mark('follow')"><span>MEET_THE_TEAM_ON_YOUTUBE</span><span>↗</span></a>
-    <div style="font-size:16px;line-height:1.5;color:var(--mute);margin-top:20px;text-wrap:pretty">Post your result with <span class="mono" style="color:var(--text);font-size:14px">${esc(TAG?"#"+TAG:"#BuildWhatMatters")}</span> and tag Sand Technologies. We read all of them.</div>
+    <div class="mono" style="font-size:11px;letter-spacing:.06em;color:var(--mute);margin-top:24px;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center"><span>Follow the adventure</span>${soc.map(([n,u])=>`<span>·</span><a href="${u}" target="_blank" rel="noopener" style="color:var(--text);text-decoration:underline;text-underline-offset:3px" onclick="mark('follow')">${n}</a>`).join("")}</div>
     <div style="flex:1;min-height:24px"></div>
     <div class="row" style="gap:12px">
       <div class="foot" style="letter-spacing:.1em">CRITICAL SYSTEMS. INTELLIGENT OUTCOMES.</div>
@@ -602,7 +603,7 @@ function postText(){ return TYPES[S.result].post.replace("{where}", EVENT ? " at
 async function copyPost(){
   try{
     await navigator.clipboard.writeText(($("postTxt")||{}).value||postText()); mark("shared");
-    const l=$("copyLbl"); if(l){ l.textContent="COPIED_TO_CLIPBOARD"; clearTimeout(copyTimer); copyTimer=setTimeout(()=>{ const x=$("copyLbl"); if(x) x.textContent="COPY_A_LINKEDIN_POST"; },2200); }
+    const l=$("copyLbl"); if(l){ l.textContent="COPIED"; clearTimeout(copyTimer); copyTimer=setTimeout(()=>{ const x=$("copyLbl"); if(x) x.textContent="COPY_THE_POST"; },2200); }
   }catch(e){ prompt("Copy this:", ($("postTxt")||{}).value||postText()); }
 }
 function wrap(ctx, text, x, y, maxW, lh){
@@ -619,14 +620,13 @@ async function drawCard(){
   const ls = v => { if("letterSpacing" in ctx) ctx.letterSpacing = v+"px"; };
   ctx.fillStyle=T.bg; ctx.fillRect(0,0,1080,1080);
   ctx.textBaseline="alphabetic"; ctx.textAlign="left"; ls(0);
-  try{ const img = await loadImg("assets/sand-logo-white.png"); ctx.globalCompositeOperation="lighten"; ctx.drawImage(img,64,64,Math.round(30*img.naturalWidth/img.naturalHeight),30); ctx.globalCompositeOperation="source-over"; }
+  let logoRatio = 3.9;
+  try{ const img = await loadImg("assets/sand-logo-white.png"); logoRatio = img.naturalWidth/img.naturalHeight; ctx.globalCompositeOperation="lighten"; ctx.drawImage(img,64,64,Math.round(30*img.naturalWidth/img.naturalHeight),30); ctx.globalCompositeOperation="source-over"; }
   catch(e){ ctx.fillStyle="#EEEEEE"; ctx.font="800 32px "+SANS; ctx.fillText("SAND",64,94); }
-  ctx.textAlign="right"; ctx.fillStyle=T.accent; ctx.font="500 22px "+MONO; ls(2.2);
-  ctx.fillText("ADVENTURER 0"+n+" / 05", 1016, 87); ctx.textAlign="left";
-  ctx.fillStyle="#F1AE0A"; ctx.font="500 22px "+MONO; ls(2.2);
-  let y = wrap(ctx, "WHAT KIND OF ADVENTURER ARE YOU?", 64, 190, 460, 31);
+  ctx.fillStyle=T.accent; ctx.font="500 22px "+MONO; ls(2.2);
+  ctx.fillText("ADVENTURER", 64+Math.round(30*logoRatio)+22, 87);
   ctx.fillStyle="#EEEEEE"; ctx.font="700 46px "+SANS; ls(-1.4);
-  wrap(ctx, "“"+T.line+"”", 64, y-31+28+42, 460, 48);
+  wrap(ctx, "“"+T.line+"”", 64, 168+42, 460, 48);
   try{
     const im = await loadImg(advSrc(k,"full")), bw=500, bh=480, sc=Math.min(bw/im.naturalWidth, bh/im.naturalHeight), w=im.naturalWidth*sc, h=im.naturalHeight*sc;
     ctx.drawImage(im, 520+(bw-w)/2, 130+bh-h, w, h);
@@ -641,7 +641,7 @@ async function drawCard(){
   ctx.beginPath(); ctx.moveTo(64,980.5); ctx.lineTo(1016,980.5); ctx.stroke();
   ctx.font="500 18px "+MONO; ls(1.4);
   ctx.fillStyle="#EEEEEE"; ctx.fillText(TAGS.trim().toUpperCase().replace(" ","  "), 64, 1021);
-  ctx.textAlign="right"; ctx.fillStyle="#9A9A9A"; ctx.fillText("CRITICAL SYSTEMS. INTELLIGENT OUTCOMES.", 1016, 1021); ctx.textAlign="left"; ls(0);
+  ctx.textAlign="right"; ctx.fillStyle="#9A9A9A"; ctx.fillText("sandtech.com/adventurer", 1016, 1021); ctx.textAlign="left"; ls(0);
   return new Promise(res=>c.toBlob(res,"image/png"));
 }
 
@@ -651,17 +651,19 @@ async function shareScreen(){
   mark("share_screen");
   render(`<div class="screen" style="min-height:100dvh">
     <div class="row">${LOGO}<button class="txt" onclick="result()">← MY RESULT</button></div>
-    <div class="mono" style="font-size:12px;letter-spacing:.12em;color:var(--squash);margin-top:16px">SHARE_YOUR_RESULT</div>
-    <div class="h1" style="font-size:34px;letter-spacing:-.035em;line-height:1;margin-top:10px">Post it. Tag us.</div>
+    <div class="mono" style="font-size:12px;letter-spacing:.12em;color:var(--squash);margin-top:16px">MAKE_IT_OFFICIAL</div>
+    <div class="h1" style="font-size:34px;letter-spacing:-.035em;line-height:1;margin-top:10px">You're a ${esc(T.name.replace("The ",""))}. Say it out loud.</div>
+    <div style="font-size:16px;line-height:1.5;color:var(--soft);margin-top:12px;text-wrap:pretty">The card's yours. Put it on LinkedIn, Instagram, wherever you live. The people who get it will get it.</div>
     <div style="width:100%;aspect-ratio:1/1;margin-top:20px;border:1px solid var(--oil);box-sizing:border-box;background:${T.bg};overflow:hidden"><img id="cardImg" alt="" style="width:100%;height:100%;display:block"></div>
     <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
-      ${btn("DOWNLOAD_IMAGE","↓","saveImg()")}
-      <button class="btn ghost" onclick="copyPost()"><span id="copyLbl">COPY_A_LINKEDIN_POST</span><span>⧉</span></button>
+      ${btn("SAVE_THE_CARD","↓","saveImg()")}
+      <button class="btn ghost" onclick="copyPost()"><span id="copyLbl">COPY_THE_POST</span><span>⧉</span></button>
     </div>
     <div style="background:var(--oil);padding:16px;margin-top:16px;display:flex;flex-direction:column;gap:10px">
-      <div class="mono" style="font-size:11px;letter-spacing:.1em;color:var(--mute)">LINKEDIN POST · EDIT BEFORE YOU POST</div>
+      <div class="mono" style="font-size:11px;letter-spacing:.1em;color:var(--mute)">YOUR POST · EDIT IT, IT'S YOURS</div>
       <textarea id="postTxt" rows="6" style="all:unset;box-sizing:border-box;width:100%;font-size:15px;line-height:1.5;color:var(--text);white-space:pre-wrap;min-height:120px">${esc(postText())}</textarea>
     </div>
+    <div style="margin-top:16px">${btn("ONE_LAST_THING","→","follow()","ghost")}</div>
     <div style="flex:1;min-height:20px"></div>
     ${FOOT}
   </div>`);
@@ -679,7 +681,7 @@ async function saveImg(){
     try{ await navigator.share({files:[file], text:($("postTxt")||{}).value||postText()}); done = true; }catch(e){ if(e.name==="AbortError") return; }
   }
   if(!done){ const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="sand-adventurer.png"; a.click(); }
-  toast("IMAGE_SAVED · post it with "+TAGS.trim());
+  toast("CARD_SAVED · post it with "+TAGS.trim());
 }
 
 /* ============================================================
