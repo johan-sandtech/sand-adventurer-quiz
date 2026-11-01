@@ -86,6 +86,10 @@ textarea.inp{height:auto;padding:12px 14px;line-height:1.4;resize:none}
 .jrow{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;min-height:72px;border-top:1px solid var(--gravel);padding:12px 0;text-decoration:none}
 .tile{background:var(--oil);height:104px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;border-radius:4px}
 .tab{display:flex;flex-direction:column;align-items:center;gap:6px}
+.mixrow{display:flex;align-items:center;gap:14px;min-height:64px;padding:8px 0;border-bottom:1px solid var(--oil);text-align:left;width:100%}
+.mixrow:last-child{border-bottom:0}
+.mixav{width:44px;height:44px;flex:none;border-radius:50%;background:var(--oil);border:2px solid transparent;padding:2px;box-sizing:border-box;overflow:hidden}
+.mixav img{width:100%;height:100%;object-fit:contain;display:block}
 .tab .av{width:52px;height:52px;border-radius:50%;background:var(--oil);overflow:hidden;border:2px solid transparent;padding:2px;box-sizing:border-box}
 .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--oil);color:var(--text);padding:12px 16px;font:400 12px var(--mono);letter-spacing:.04em;opacity:0;transition:opacity .2s;pointer-events:none;border:1px solid var(--gravel);z-index:9;white-space:nowrap}
 .toast.show{opacity:1}
@@ -553,6 +557,12 @@ function result(){
   const fit = FIT[S.result][S.build];
   const jobs = [fit[1], ...T.jobs].filter((v,i,a)=>a.indexOf(v)===i).slice(0,2);
   const n = ORDER.indexOf(S.result)+1;
+  const sc = Object.assign({}, S.scores); if(S.tie) sc[S.tie] += 0.5;
+  const mix = ORDER.map((k,i)=>{ const me = k===S.result, w = Math.max(4, Math.round(sc[k]/3.5*100));
+    return `<button class="mixrow" onclick="meet(${i})"><div class="mixav" style="border-color:${me?TYPES[k].accent:"transparent"}"><img src="${advSrc(k,"bust")}" alt="" draggable="false"></div>
+      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px"><div class="row"><span style="font-size:16px;font-weight:${me?800:600};letter-spacing:-.01em;color:${me?"var(--text)":"var(--soft)"}">${esc(TYPES[k].name)}</span>${me?`<span class="mono" style="font-size:10px;letter-spacing:.1em;color:${TYPES[k].accent}">YOU</span>`:""}</div>
+      <div style="height:4px;background:var(--oil)"><div style="height:100%;width:${w}%;background:${me?TYPES[k].accent:"var(--gravel)"}"></div></div></div>
+      <span style="font-size:16px;color:var(--mute)">→</span></button>`; }).join("");
   render(`<div class="screen" style="padding:0">
     <div style="min-height:100dvh;display:flex;flex-direction:column;padding:24px">
       <div class="row">${LOGO}<div class="mono" style="font-size:12px;letter-spacing:.08em;color:var(--cadet);white-space:nowrap">ADVENTURER 0${n} / 05</div></div>
@@ -567,6 +577,10 @@ function result(){
     </div>
     <div style="padding:36px 24px 24px;display:flex;flex-direction:column;gap:32px;border-top:1px solid var(--oil)">
       ${[["WHAT IT LOOKS LIKE AT SAND",T.says],["THE KIND OF THING YOU’D DO",T.proof],["WHERE YOU’D FIT",fit[0]],["WATCH OUT FOR",T.watch]].map(([h,p])=>`<div style="display:flex;flex-direction:column;gap:10px"><div class="dh">${h}</div><div style="font-size:17px;line-height:1.5;text-wrap:pretty">${esc(p)}</div></div>`).join("")}
+      <div style="display:flex;flex-direction:column">
+        <div class="dh" style="padding-bottom:8px">THE_FIVE_ADVENTURERS</div>
+        ${mix}
+      </div>
       <div style="border:1px solid var(--squash);padding:20px;display:flex;flex-direction:column;gap:10px">
         <div class="dh">YOUR_NEXT_MOVE</div>
         <div style="font-size:19px;font-weight:600;line-height:1.3;letter-spacing:-.01em;text-wrap:pretty">Show this screen at the booth. There's merch with your name on it.</div>
