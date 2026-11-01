@@ -653,7 +653,7 @@ async function drawCard(){
   ctx.beginPath(); ctx.moveTo(64,980.5); ctx.lineTo(1016,980.5); ctx.stroke();
   ctx.font="500 18px "+MONO; ls(1.4);
   ctx.fillStyle="#EEEEEE"; ctx.fillText(TAGS.trim().toUpperCase().replace(" ","  "), 64, 1021);
-  ctx.textAlign="right"; ctx.fillStyle="#9A9A9A"; ctx.fillText("sandtech.com/adventurer", 1016, 1021); ctx.textAlign="left"; ls(0);
+  ctx.textAlign="right"; ctx.fillStyle="#9A9A9A"; ctx.fillText("sandtech.com/careers", 1016, 1021); ctx.textAlign="left"; ls(0);
   return new Promise(res=>c.toBlob(res,"image/png"));
 }
 
