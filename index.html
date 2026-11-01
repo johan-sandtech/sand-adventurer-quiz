@@ -104,12 +104,24 @@ textarea.inp{height:auto;padding:12px 14px;line-height:1.4;resize:none}
    ============================================================ */
 const CONFIG = {
   // Google Form "formResponse" URL. Leave empty to run the quiz without saving.
-  FORM_ACTION: "",
-  // Map of our fields -> Google Form entry IDs (entry.123456789). Filled in by Johan's helper.
+  FORM_ACTION: "https://docs.google.com/forms/d/e/1FAIpQLSfO7IkrxLQDgKH5KKXOG9cxYpQ0V8Z58eHdMTbdljVHKcNTQA/formResponse",
+  // Map of our fields -> Google Form entry IDs (entry.123456789). Read from the form.
   ENTRIES: {
-    name:"", email:"", city:"", role:"", link:"", problem:"", consent:"",
-    result:"", build_for:"", top_principle:"", scores:"", principles:"", source:""
+    name:"entry.311868413",
+    email:"entry.1272836368",
+    city:"entry.1914433231",
+    role:"entry.377705598",
+    link:"entry.1493184246",
+    problem:"entry.97555804",
+    consent:"entry.766060776",
+    result:"entry.559685517",
+    build_for:"entry.2114078045",
+    top_principle:"entry.679529788",
+    scores:"entry.1129226443",
+    principles:"entry.2036993753",
+    source:"entry.1362529415",
   },
+
   // Greenhouse source token so applications trace back to the booth.
   GH_SRC: "omi3fjf2teu",
   CAREERS: "https://www.sandtech.com/careers",
