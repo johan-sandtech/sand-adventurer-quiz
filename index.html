@@ -131,11 +131,10 @@ const GH = "https://job-boards.eu.greenhouse.io/sandtechholdingslimited/jobs/";
 const JOBS = {
   fde:{t:"Forward Deployed Engineer", l:"USA", id:"4976227101"},
   se: {t:"Software Engineer", l:"USA · Baltimore on-site", id:"4956160101"},
-  tl: {t:"Technical Lead", l:"", id:null},
-  pd: {t:"Product Director", l:"", id:null},
-  de: {t:"Data Engineer", l:"Baltimore", id:null}
+  tl: {t:"Technical Lead", l:"USA", id:"4989546101"},
+  pd: {t:"Product Director", l:"USA", id:"5005773101"},
+  de: {t:"Data Engineer", l:"Baltimore", id:"4923690101"}
 };
-// roles without a Greenhouse id yet link to the careers page
 const job = k => JOBS[k].id ? GH + JOBS[k].id + "?gh_src=" + CONFIG.GH_SRC : CONFIG.CAREERS;
 
 /* ============================================================
