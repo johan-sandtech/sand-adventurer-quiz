@@ -143,6 +143,8 @@ const SOURCE = Q.get("src") || "conference";
 const EVENT  = Q.get("event") || "";
 const TAG    = (Q.get("tag") || "").replace(/^#/,"");
 const TAGS   = (TAG ? "#"+TAG+" " : "") + "#BuildWhatMatters";
+// Booth reward line. Smart City Expo does not promise merch.
+const REWARD = SOURCE==="smartcity26" ? "Show this screen at the booth to receive your prize." : "Show this screen at the booth. There's merch with your name on it.";
 const GH = "https://job-boards.eu.greenhouse.io/sandtechholdingslimited/jobs/";
 const JOBS = {
   fde:{t:"Forward Deployed Engineer", l:"USA", id:"4976227101"},
@@ -583,7 +585,7 @@ function result(){
       </div>
       <div style="border:1px solid var(--squash);padding:20px;display:flex;flex-direction:column;gap:10px">
         <div class="dh">YOUR_NEXT_MOVE</div>
-        <div style="font-size:19px;font-weight:600;line-height:1.3;letter-spacing:-.01em;text-wrap:pretty">Show this screen at the booth. There's merch with your name on it.</div>
+        <div style="font-size:19px;font-weight:600;line-height:1.3;letter-spacing:-.01em;text-wrap:pretty">${esc(REWARD)}</div>
         <div style="font-size:16px;line-height:1.45;color:var(--soft)">Then tell people what you are.</div>
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;margin-top:-8px">
