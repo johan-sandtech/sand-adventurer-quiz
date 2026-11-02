@@ -157,29 +157,29 @@ const job = k => JOBS[k].id ? GH + JOBS[k].id + "?gh_src=" + CONFIG.GH_SRC : CON
    CONTENT
    ============================================================ */
 const TYPES = {
-  gonzo:{ name:"The Gonzo", cluster:"Action, Ownership & Execution", accent:"#F54343", bg:"#0A0A0A",
-    line:"I don't cover the story. I go and live it.",
-    why:"Most reporters watch from the press box and file a tidy story. Hunter S. Thompson got on the back of the motorbike, rode with the Hells Angels for a year, and wrote it from the inside. They called it gonzo: you don't observe the thing, you become part of it. That's you. You don't wait for the brief, the permission or the perfect plan. You get in the room, get your hands dirty, and come back with the thing nobody could have written from a desk.",
-    note:"Gonzo is from gonzo journalism, Hunter S. Thompson's way of reporting from inside the story instead of observing it. Fear and Loathing in Las Vegas is the famous one. At Sand it means the engineer who's in the control room, not on the call about the control room.",
-    hero:["Most reporters watch from the press box. Hunter S. Thompson rode with the Hells Angels and wrote it from the inside. That's gonzo, and that's you: no waiting for the brief, the permission or the perfect plan.", "You get in the room, get your hands dirty, and come back with the thing nobody else could have written."],
+  gonzo:{ name:"The Hero", cluster:"Action, Ownership & Execution", accent:"#F54343", bg:"#0A0A0A",
+    line:"I don't wait to be asked. I go.",
+    why:"Heroes don't wait to be asked. When the call comes at 2 a.m., they're already moving. Not the cape kind: the kind who runs toward the thing everyone else is backing away from, because someone has to and it may as well be them. That's you. You don't wait for the brief, the permission or the perfect plan. You get in the room, get your hands dirty, and get the hard thing done while everyone else is still deciding whether to start.",
+    note:"Hero in the oldest sense: the one who answers the call. Every hero's journey starts with someone saying yes to something hard before they know how it ends. At Sand it means the engineer who's in the control room, not on the call about the control room.",
+    hero:["Heroes don't wait to be asked. When the call comes at 2 a.m., they're already moving. Not the cape kind: the kind who runs toward what everyone else is backing away from. That's you: no waiting for the brief, the permission or the perfect plan.", "You get in the room, get your hands dirty, and get the hard thing done."],
     principles:["Decide","Get Stuff Done","Do Hard Things"],
-    says:"You're the one on the plane before anyone's asked. Ambiguity doesn't scare you, it wakes you up, and you'd rather meet the system you're building for than guess at it from a desk.",
+    says:"You're the one on the plane before anyone's asked. Ambiguity doesn't scare you, it wakes you up, and you'd rather meet the system you're building for than guess at it from a desk. Decide, get it done, do the hard thing: that's your whole method.",
     proof:"A city's operations centre stood up in days, not months. Someone had to be on that plane.",
-    watch:"Going in so hard you forget to report back. The Gonzo's job is to come out with the story, not just the scars.",
+    watch:"Making it a solo act. A hero who doesn't bring the team with them isn't a hero, they're a story about someone else cleaning up afterwards.",
     tie:"Anything that gets your blood racing is probably worth doing.",
-    post:"Turns out I'm a Gonzo. Took the Sand Technologies Adventurer quiz{where} and apparently I don't cover the story, I go and live it. {tags}",
+    post:"Turns out I'm a Hero. Took the Sand Technologies Adventurer quiz{where} and apparently I don't wait to be asked, I go. {tags}",
     jobs:["fde","se"] },
-  mech:{ name:"The Mechanic", cluster:"Operational Excellence & Simplicity", accent:"#F1AE0A", bg:"#0A0A0A",
-    line:"I find the part that's actually broken and fix that. Properly.",
-    why:"A good mechanic doesn't read you the brochure or swap every part until the noise stops. She listens to the engine, finds the one thing that's actually wrong, and fixes that. Properly. No extra bolts, no \"while we're in there\". That's you. Complicated problems, simple fixes, done right. You don't hand the keys back until it runs, and you don't trust a fix you can't explain in a sentence.",
-    note:"K.I.S.S is Keep It Simple, Stupid, a line from 1960s aircraft engineering: a jet should be fixable by an average mechanic in the field with basic tools. Raise The Bar is the other half: simple, but never sloppy.",
-    hero:["A good mechanic doesn't swap every part until the noise stops. She listens to the engine, finds the one thing that's actually wrong, and fixes that. You'd rather do that properly than add bolts.", "Complicated problems. Simple fixes. Done right."],
+  mech:{ name:"The Fixer", cluster:"Operational Excellence & Simplicity", accent:"#F1AE0A", bg:"#0A0A0A",
+    line:"I find what's actually broken and fix that. Properly.",
+    why:"Every expedition has a fixer. The jeep won't start, the permit's wrong, the generator's dead at midnight. The fixer doesn't call a meeting or swap every part until the noise stops. They find the one thing that's actually broken and sort it. Quietly. Properly. No extra bolts. That's you. Complicated problems, simple fixes, done right. You don't hand it back until it runs, and you don't trust a fix you can't explain in a sentence.",
+    note:"K.I.S.S is Keep It Simple, Stupid, a line from 1960s aircraft engineering: a jet should be fixable in the field with basic tools. Raise The Bar is the other half: simple, but never sloppy. A good fixer is both.",
+    hero:["Every expedition has a fixer: the one who sorts the dead generator at midnight without calling a meeting. They find the one thing that's actually broken and fix that. You'd rather do that properly than add bolts.", "Complicated problems. Simple fixes. Done right."],
     principles:["K.I.S.S","Raise The Bar"],
     says:"You refuse to let the solution be as complicated as the problem. A broken thing is an invitation, and “works in the demo” is not the bar. You want your work running in a live system someone depends on, not in a report nobody reads.",
     proof:"Planning hundreds of telecom networks from data that was never meant to be planned from.",
-    watch:"Loving the engine more than the drive. The fix only counts when the person who runs the system uses it.",
+    watch:"Loving the fix more than the journey. It only counts when the person who runs the system uses it.",
     tie:"Grease on my hands, skill in my mind, and passion in my heart.",
-    post:"Turns out I'm a Mechanic. Took the Sand Technologies Adventurer quiz{where} and apparently I find the part that's actually broken and fix that, properly. {tags}",
+    post:"Turns out I'm a Fixer. Took the Sand Technologies Adventurer quiz{where} and apparently I find what's actually broken and fix that, properly. {tags}",
     jobs:["se","de"] },
   surf:{ name:"The Surfer", cluster:"Clients, Integrity & the Long Game", accent:"#80A2B4", bg:"#0A0A0A",
     line:"I read the water. The ocean's in charge, and I'm fine with that.",
@@ -193,17 +193,17 @@ const TYPES = {
     tie:"No matter the state of the tide, I will find a wave to ride.",
     post:"Turns out I'm a Surfer. Took the Sand Technologies Adventurer quiz{where} and apparently I read the water and the ocean's in charge. {tags}",
     jobs:["fde","pd"] },
-  capt:{ name:"The Captain", cluster:"Collaboration & Inclusion", accent:"#EEEEEE", bg:"#202020",
-    line:"I know every role. I get everyone home.",
-    why:"A captain is almost never the best sailor on the boat. The job is different: know every role well enough to cover it, make sure the quiet one's warning gets heard before the storm, and get everyone home. The crew is the point. The captain is how the crew works. That's you. You own the outcome, not just your part of it. You grow the crew instead of carrying it, and you're quietly training the next captain the whole time.",
-    note:"Each One, Teach Ten is Sand's rule that whatever you learn, you pass on to ten people. Everybody Is Welcome is why the crew is worth listening to in the first place: teams across four continents, every kind of background, all on the same boat.",
-    hero:["A captain is almost never the best sailor on the boat. The job is to know every role, make sure the quiet one gets heard before the storm, and get everyone home. You own the outcome and you grow the crew.", "You're quietly training the next captain the whole time."],
+  capt:{ name:"The Guide", cluster:"Collaboration & Inclusion", accent:"#EEEEEE", bg:"#202020",
+    line:"I know the route. I get everyone up and back.",
+    why:"A mountain guide is rarely the strongest climber on the rope. The job is different: know the route, read the weather, set the pace for the slowest person, not the fastest, and make sure the quiet one's \"I don't like this\" gets heard before the storm. Everyone goes up. Everyone comes back. That's you. You own the outcome, not just your part of it. You don't carry people up the mountain, you teach them to read it, and you're quietly training the next guide the whole time.",
+    note:"Each One, Teach Ten is Sand's rule that whatever you learn, you pass on to ten people. Everybody Is Welcome is why the whole rope is worth listening to: teams across four continents, every kind of background, all on the same mountain.",
+    hero:["A mountain guide is rarely the strongest climber on the rope. The job is to know the route, set the pace for the slowest, make sure the quiet one gets heard before the storm, and get everyone up and back. You own the outcome and you grow the team.", "You're quietly training the next guide the whole time."],
     principles:["Each One, Teach Ten","Everybody Is Welcome"],
     says:"You own the outcome, not just your part of it. You notice who isn't being heard, you teach rather than carry, and you'd rather ten people could do the thing than be the only one who can.",
-    proof:"Training a ministry's own data team so the system keeps working long after we've gone.",
-    watch:"Carrying the crew instead of growing it. Everyone leads means everyone, including the people you're tempted to carry.",
-    tie:"The ship has weather'd every rack, the prize we sought is won.",
-    post:"Turns out I'm a Captain. Took the Sand Technologies Adventurer quiz{where} and apparently I know every role and get everyone home. {tags}",
+    proof:"Training a ministry's own data team so the system keeps working long after we've gone. They can read the mountain now.",
+    watch:"Carrying people up instead of teaching them to climb. Everyone leads means everyone, including the ones you're tempted to carry.",
+    tie:"Getting to the top is optional. Getting down is mandatory.",
+    post:"Turns out I'm a Guide. Took the Sand Technologies Adventurer quiz{where} and apparently I know the route and get everyone up and back. {tags}",
     jobs:["tl","pd"] },
   pack:{ name:"The Backpacker", cluster:"Growth, Innovation & Resilience", accent:"#F1AE0A", bg:"#0A0A0A",
     line:"I take the road nobody recommended, and come back with the story.",
@@ -238,7 +238,7 @@ const PRINCIPLES = [
 const PNUM = {"Choose Growth": "01", "Decide": "02", "Get Stuff Done": "03", "K.I.S.S": "04", "Surf like Yvon": "05", "Our Clients Run the Company": "06", "Play The Long Game": "07", "Do Hard Things": "08", "Everybody Is Welcome": "09", "Each One, Teach Ten": "10", "Raise The Bar": "11", "There Is No Failure": "12", "Pioneer": "13"};
 const QUESTIONS = [
   { q:"You're asked to build something in the field for a client. There's no manual and very little precedent. What's your first move?", a:[
-    {t:"surf", p:"Play The Long Game", a:"I ask the operator what they'd want in five years, not what will demo well in five weeks. I want them to understand our priorities.", r:"We build for the person who'll still be running it in five years, not for the demo."},
+    {t:"surf", p:"Play The Long Game", a:"I ask the operator what they'd want in five years, not what we will demo well in five weeks. I want to understand their priorities.", r:"We build for the person who'll still be running it in five years, not for the demo."},
     {t:"capt", p:"Each One, Teach Ten", a:"I find the two people who've done the nearest thing to it and we work it out together. I learn from them, they learn from me.", r:"Nobody here solves hard things alone, and nobody keeps what they learned to themselves."},
     {t:"pack", p:"Pioneer", a:"I start my research to write that manual. It would benefit everyone now, and we can iterate it for years to come.", r:"Most of what we build has no precedent. That's the job, not a bug."} ]},
   { q:"You've just been posted to a city you've never been to, with a team you've never met. What do you do first?", a:[
@@ -291,8 +291,8 @@ const INTRO = [
   { step:"02", top:"96px", label:"02 // HOW_WE_DO_IT", title:"We embed with our clients to make it stick.",
     body:["Our engineers work inside the operation, next to the people who run it, for as long as it takes. That's the difference between a tool that gets used and one that gets ignored."], cta:"NEXT" },
   { step:"03", top:"48px", label:"03 // HOW_THIS_WORKS", title:"It takes a certain kind of person.",
-    body:["We run on 13 leadership principles. Not values on a wall, but the things we actually reach for when there isn't a perfect answer.","We'll put you in five situations from the field. Each answer you pick is one of those principles. The ones you keep picking add up to what kind of Adventurer you'd be here."],
-    kicker:"There are no wrong answers. Just different kinds of Adventurer.", cta:"TAKE_THE_QUIZ", alt:true }
+    body:["At Sand, there's rarely a playbook for the problems we're solving. Instead, we rely on 13 leadership principles to guide how we think, make decisions and get things done.","Now it's your turn.","We'll put you in five real-world scenarios inspired by the challenges we face at Sand. There's no perfect answer. Just different ways to approach a problem. Your choices will reveal your Adventurer type: the instincts you naturally lean on, the strengths you bring to a challenge and how you might approach the unexpected.","The best teams aren't made up of people who think alike. They're made up of people who bring different strengths to the adventure."],
+    cta:"DISCOVER_YOUR_ADVENTURER_TYPE", alt:true }
 ];
 
 /* ============================================================
@@ -323,7 +323,7 @@ function landing(){
     ${LOGO}
     <div class="mono" style="font-size:14px;letter-spacing:.08em;margin-top:64px">${EVENT ? "CAREERS // "+esc(EVENT.toUpperCase()) : "CAREERS"}</div>
     <h1 class="h1" style="font-size:48px;line-height:.92;margin:20px 0 0">Are you an Adventurer?</h1>
-    <div style="font-size:18px;line-height:1.4;margin-top:24px"><span style="font-weight:700">The systems humanity depends on need intelligent minds willing to go the distance.</span> <span style="color:var(--soft)">So what kind of Adventurer would you be at Sand?</span></div>
+    <div style="font-size:18px;line-height:1.4;margin-top:24px"><span style="font-weight:700">The systems humanity depends on need intelligent minds willing to go the distance.</span> <span style="color:var(--soft)">So what kind of Adventurer are you?</span></div>
     <div style="flex:1;min-height:170px;display:flex;align-items:flex-end;margin:0 -24px"><div style="width:100%;height:150px;padding:0 12px;display:flex;align-items:flex-end;justify-content:space-between;gap:2%">${ORDER.map((k,n)=>`<img src="${advSrc(k,"full")}" alt="" draggable="false" style="height:${[92,88,94,86,95][n]}%;width:${k==="capt"?28:17}%;min-width:0;object-fit:contain;object-position:bottom;display:block">`).join("")}</div></div>
     <div style="display:flex;flex-direction:column;gap:12px;margin-top:20px">
       ${btn("FIND_OUT","→","intro(0)")}
@@ -345,7 +345,7 @@ function intro(i){
     <div style="flex:1;min-height:24px"></div>
     <div style="display:flex;flex-direction:column;gap:10px">
       ${btn(c.cta,"→",next)}
-      ${c.alt?btn("SEE_THE_13_PRINCIPLES_FIRST","","principles()","ghost"):""}
+      ${c.alt?btn("SEE_SAND’S_LEADERSHIP_PRINCIPLES_FIRST","","principles()","ghost"):""}
     </div>
     <div style="margin-top:20px">${FOOT}</div>
   </div>`);
@@ -453,7 +453,7 @@ function tiebreak(){
   S.lock = false;
   render(`<div class="screen">
     ${qHead(6,"ONE MORE")}
-    <div style="font-size:36px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:24px">Which line is most you?</div>
+    <div style="font-size:36px;font-weight:700;letter-spacing:-.025em;line-height:1.08;margin-top:24px">Which line most represents you?</div>
     <div style="margin-top:24px">${opts.map((t,k)=>ans(t,k,`pickTie('${t}')`,"",TYPES[t].tie)).join("")}</div>
   </div>`);
 }
