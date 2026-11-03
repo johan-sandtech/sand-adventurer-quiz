@@ -178,7 +178,7 @@ const TYPES = {
     says:"You're the one on the plane before anyone's asked. Ambiguity doesn't scare you, it wakes you up, and you'd rather meet the system you're building for than guess at it from a desk. Decide, get it done, do the hard thing: that's your whole method.",
     proof:"A city's operations centre stood up in days, not months. Someone had to be on that plane.",
     watch:"Making it a solo act. A hero who doesn't bring the team with them isn't a hero, they're a story about someone else cleaning up afterwards.",
-    tie:"Anything that gets your blood racing is probably worth doing.",
+    tie:"Someone has to go first. It may as well be me.",
     post:"Turns out I'm a Hero. Took the Sand Technologies Adventurer quiz{where} and apparently I don't wait to be asked, I go. {tags}",
     jobs:["fde","se"] },
   mech:{ name:"The Fixer", cluster:"Operational Excellence & Simplicity", accent:"#F1AE0A", bg:"#0A0A0A",
@@ -202,7 +202,7 @@ const TYPES = {
     says:"You're the one the operator calls. You'd rather say the hard thing today than the comfortable thing in six months, and you measure success by whether the system's still in use a year on, by people who'd fight to keep it.",
     proof:"Helping run a capital city's water supply for years. Not launching it and leaving.",
     watch:"Saying yes too often. Respecting the ocean sometimes means telling people the surf's closed.",
-    tie:"No matter the state of the tide, I will find a wave to ride.",
+    tie:"Read the water before you read the map.",
     post:"Turns out I'm a Surfer. Took the Sand Technologies Adventurer quiz{where} and apparently I read the water and the ocean's in charge. {tags}",
     jobs:["fde","pd"] },
   capt:{ name:"The Guide", cluster:"Collaboration & Inclusion", accent:"#EEEEEE", bg:"#202020",
@@ -214,7 +214,7 @@ const TYPES = {
     says:"You own the outcome, not just your part of it. You notice who isn't being heard, you teach rather than carry, and you'd rather ten people could do the thing than be the only one who can.",
     proof:"Training a ministry's own data team so the system keeps working long after we've gone. They can read the mountain now.",
     watch:"Carrying people up instead of teaching them to climb. Everyone leads means everyone, including the ones you're tempted to carry.",
-    tie:"Getting to the top is optional. Getting down is mandatory.",
+    tie:"Reaching the summit is optional. Bringing everyone home is not.",
     post:"Turns out I'm a Guide. Took the Sand Technologies Adventurer quiz{where} and apparently I know the route and get everyone up and back. {tags}",
     jobs:["tl","pd"] },
   pack:{ name:"The Backpacker", cluster:"Growth, Innovation & Resilience", accent:"#F1AE0A", bg:"#0A0A0A",
@@ -226,7 +226,7 @@ const TYPES = {
     says:"You go back to first principles because the guidebook is usually wrong. A wrong turn is the most useful data you'll get all month, and you'd rather be somewhere nobody's mapped than somewhere comfortable.",
     proof:"Taking the same approach from water pipes to a racing team's pit wall, and finding out what carries over.",
     watch:"Leaving before you've unpacked. The best Backpackers leave something behind that still works after they've gone.",
-    tie:"Carry as little as possible, but choose that little with care.",
+    tie:"The wrong turn is where the story starts.",
     post:"Turns out I'm a Backpacker. Took the Sand Technologies Adventurer quiz{where} and apparently I take the road nobody recommended and come back with the story. {tags}",
     jobs:["de","fde"] }
 };
@@ -262,12 +262,12 @@ const QUESTIONS = [
     {t:"mech", p:"K.I.S.S", a:"Before anyone panics: sensor, pipeline or model? Figure out what you can first.", r:"Complex problems, simple solutions. Cut the process, find the cause."},
     {t:"pack", p:"There Is No Failure", a:"Interesting. If the model's wrong, that's the most useful thing it's told us all month. Time for some damage control…", r:"Some bets will be wrong. What matters is how fast you learn from them."} ]},
   { q:"The demo worked and the client's delighted. But after the fact, you've spotted a corner case that'll cause problems six months from now… What do you do?", a:[
-    {t:"gonzo", p:"Decide", a:"I will fix it tonight and tell them in the morning. Nobody needs to approve that.", r:"Nobody here waits for permission to do the right thing."},
+    {t:"gonzo", p:"Decide", a:"I'll fix it tonight and tell them first thing. Nobody needs to approve a fix.", r:"Nobody here waits for permission to do the right thing."},
     {t:"mech", p:"Raise The Bar", a:"It doesn't ship until it's fixed. “Works in the demo” isn't the bar.", r:"Good enough isn't. Exceptional work, new standards."},
     {t:"surf", p:"Surf like Yvon", a:"I'll tell them today. A delighted client who doesn't know what is happening is a problem waiting to happen.", r:"Integrity over the short-term win, every time. Named for Yvon Chouinard, the Patagonia founder."} ]},
   { q:"A teammate's stuck on something, but you can see the solution. What do you do?", a:[
-    {t:"mech", p:"K.I.S.S", a:"Ask them to show me the error. Nine times out of ten the fix is simpler than the problem looks.", r:"The simplest fix that works beats the clever one that doesn’t work without even more work.."},
-    {t:"surf", p:"Our Clients Run the Company", a:"Who's waiting on it? If it's the operator, we fix it now and tidy up after.", r:"The operator waiting on it is the boss."},
+    {t:"mech", p:"K.I.S.S", a:"Ask them to show me the error. Nine times out of ten the fix is simpler than the problem looks.", r:"The simplest fix that works beats the clever one that needs more fixing."},
+    {t:"surf", p:"Our Clients Run the Company", a:"I ask who this is blocking. If it's the client's operator, they come first: we fix it now and tidy up after.", r:"The operator waiting on it is the boss."},
     {t:"capt", p:"Each One, Teach Ten", a:"I sit with them until it's unstuck, then we make sure nobody on the team hits it again.", r:"Fixing it once is good. Making sure nobody hits it again is Sand."} ]}
 ];
 
@@ -278,21 +278,21 @@ const BUILD_FOR = [
 ];
 
 const FIT = {
-  gonzo:{ operators:["Embedded engineer with a client. You're the one in the control room at 2 a.m.","fde"],
-          builders:["Embedded engineer who turns what the field needs into tools the next team can reuse.","fde"],
-          planners:["Change lead or embedded engineer: landing a new way of working with a city's leadership.","pd"] },
+  gonzo:{ operators:["Forward deployed engineer with a client. You're the one in the control room at 2 a.m.","fde"],
+          builders:["Forward deployed engineer who turns what the field needs into tools the next team can reuse.","fde"],
+          planners:["Forward deployed engineer: in the room with a city's leadership, landing a new way of working.","fde"] },
   mech: { operators:["Keeping what we shipped running where it runs: the engineer the night shift relies on.","se"],
-          builders:["Software or data engineer: the pipelines and services behind every number on the screen.","se"],
-          planners:["Data scientist: the models a programme director will actually bet a budget on.","de"] },
-  surf: { operators:["Embedded engineer, the adoption half: you're the reason the night shift trusts the screen.","fde"],
-          builders:["Product: the one who says no to features nobody asked for and yes to the ones operators did.","fde"],
-          planners:["Change lead: landing a new way of working with a city's leadership and staying until it sticks.","pd"] },
-  capt: { operators:["Technical lead on a deployment: own the outcome and grow the team around it.","fde"],
-          builders:["Technical lead or product lead: ship what the builders need and teach ten as you go.","se"],
-          planners:["Change lead or product director: adoption, trust, handing the keys over properly.","pd"] },
-  pack: { operators:["Embedded engineer or researcher: the first deployment in a new domain, written up for the next.","fde"],
-          builders:["Platform engineer or researcher: the capabilities that don't exist yet.","se"],
-          planners:["Researcher or data scientist: the models that let planners see years ahead.","de"] }
+          builders:["Software engineer: the pipelines and services behind every number on the screen.","se"],
+          planners:["Data engineer: the pipelines and models a programme director will actually bet a budget on.","de"] },
+  surf: { operators:["Forward deployed engineer, the adoption half: you're the reason the night shift trusts the screen.","fde"],
+          builders:["Product director: the one who says no to features nobody asked for and yes to the ones operators did.","pd"],
+          planners:["Product director: landing a new way of working with a city's leadership and staying until it sticks.","pd"] },
+  capt: { operators:["Technical lead on a deployment: own the outcome and grow the team around it.","tl"],
+          builders:["Technical lead: ship what the builders need and teach ten as you go.","tl"],
+          planners:["Product director: adoption, trust, handing the keys over properly.","pd"] },
+  pack: { operators:["Forward deployed engineer: the first deployment in a new domain, written up for the next.","fde"],
+          builders:["Software engineer: building the capabilities that don't exist yet.","se"],
+          planners:["Data engineer: the models and pipelines that let planners see years ahead.","de"] }
 };
 
 const ROLES = ["Engineering","Data science & ML","Product & design","Delivery & client work","Not sure yet"];
