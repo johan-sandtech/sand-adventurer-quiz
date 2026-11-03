@@ -8,6 +8,16 @@
 <meta name="description" content="Find out what kind of Adventurer you'd be at Sand.">
 <meta property="og:title" content="What kind of Adventurer are you?">
 <meta property="og:description" content="Sand Technologies. Find out what kind of Adventurer you'd be.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sand Technologies">
+<meta property="og:image" content="https://johan-sandtech.github.io/sand-adventurer-quiz/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Are you an Adventurer? Five Sand Adventurers walking in a line.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What kind of Adventurer are you?">
+<meta name="twitter:description" content="Sand Technologies. Find out what kind of Adventurer you'd be.">
+<meta name="twitter:image" content="https://johan-sandtech.github.io/sand-adventurer-quiz/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -44,7 +54,7 @@ select option{background:#202020;color:#fff}
 .step{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--mute)}
 .foot{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--mute)}
 .h1{font-weight:800;letter-spacing:-.035em;text-transform:uppercase}
-.btn{display:flex;align-items:center;justify-content:space-between;width:100%;height:auto;min-height:56px;padding:12px 20px;gap:12px;border:1px solid var(--text);border-radius:0;background:var(--text);color:var(--bg);font:600 14px var(--mono);letter-spacing:.06em;white-space:normal;overflow-wrap:anywhere;text-align:left;text-decoration:none;cursor:pointer}
+.btn{display:flex;align-items:center;justify-content:space-between;width:100%;height:auto;min-height:56px;padding:12px 20px;gap:12px;border:1px solid var(--text);border-radius:0;background:var(--text);color:var(--bg);font:600 14px var(--mono);letter-spacing:.06em;white-space:normal;overflow-wrap:break-word;text-align:left;text-decoration:none;cursor:pointer}
 .btn.ghost{background:transparent;color:var(--text);border-color:var(--mute)}
 .btn.dark{background:var(--bg);color:var(--text);border-color:var(--bg)}
 .btn.rev{flex-direction:row-reverse}
@@ -310,7 +320,7 @@ const FOOT = '<div class="foot">CRITICAL SYSTEMS. INTELLIGENT OUTCOMES.</div>';
 // characters: assets/adventurers (full figure + badge bust per type)
 const ARTK = {gonzo:"gonzo", mech:"mechanic", surf:"surfer", capt:"captain", pack:"backpacker"};
 const advSrc = (k, kind) => "assets/adventurers/adv-"+ARTK[k]+"-"+kind+".png";
-const btn = (label, icon, onclick, cls) => `<button class="btn ${cls||""}" onclick="${onclick}"><span>${label}</span><span>${icon}</span></button>`;
+const btn = (label, icon, onclick, cls) => `<button class="btn ${cls||""}" onclick="${onclick}"><span>${label.replace(/_/g,"_<wbr>")}</span><span>${icon}</span></button>`;
 function render(html){ app.innerHTML = html; window.scrollTo(0,0); }
 function toast(m){ const t=$("toast"); t.textContent=m; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),2200); }
 function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
@@ -568,11 +578,11 @@ function result(){
   render(`<div class="screen" style="padding:0">
     <div style="min-height:100dvh;display:flex;flex-direction:column;padding:24px">
       <div class="row">${LOGO}<div class="mono" style="font-size:12px;letter-spacing:.08em;color:var(--cadet);white-space:nowrap">ADVENTURER 0${n} / 05</div></div>
-      <div style="height:270px;margin:8px -24px 0;background:${T.bg};display:flex;justify-content:center"><img src="${advSrc(S.result,"full")}" alt="" draggable="false" style="height:100%;width:auto;max-width:100%;padding:6px 0;box-sizing:border-box;object-fit:contain"></div>
-      <div class="mono" style="font-size:12px;letter-spacing:.12em;color:var(--mute);margin-top:20px;text-transform:uppercase">${esc(T.cluster)}</div>
-      <div class="h1" style="font-size:50px;letter-spacing:-.04em;line-height:.92;margin-top:10px">You're ${esc(T.name)}.</div>
-      <div style="font-size:16px;line-height:1.45;color:var(--soft);margin-top:14px;text-wrap:pretty">${esc(T.hero[0])} <span style="color:var(--text);font-weight:700">${esc(T.hero[1])}</span></div>
-      <div class="mono" style="font-size:11px;letter-spacing:.06em;color:var(--mute);margin-top:18px">Your answers kept landing on these principles:</div>
+      <div style="height:min(230px,28dvh);margin:8px -24px 0;background:${T.bg};display:flex;justify-content:center"><img src="${advSrc(S.result,"full")}" alt="" draggable="false" style="height:100%;width:auto;max-width:100%;padding:6px 0;box-sizing:border-box;object-fit:contain"></div>
+      <div class="mono" style="font-size:12px;letter-spacing:.12em;color:var(--mute);margin-top:14px;text-transform:uppercase">${esc(T.cluster)}</div>
+      <div class="h1" style="font-size:46px;letter-spacing:-.04em;line-height:.92;margin-top:8px">You're ${esc(T.name)}.</div>
+      <div style="font-size:16px;line-height:1.4;color:var(--soft);margin-top:12px;text-wrap:pretty">${esc(T.hero[0])} <span style="color:var(--text);font-weight:700">${esc(T.hero[1])}</span></div>
+      <div class="mono" style="font-size:11px;letter-spacing:.06em;color:var(--mute);margin-top:14px">Your answers kept landing on these principles:</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">${T.principles.map(p=>`<div class="pill ${p===S.top?"top":""}">${esc(p.toUpperCase())}</div>`).join("")}</div>
       <div style="flex:1;min-height:16px"></div>
       <div class="row mono" style="font-size:11px;letter-spacing:.12em;color:var(--mute);padding-top:12px"><span>SCROLL FOR MORE</span><span style="font-size:18px;color:var(--text)">↓</span></div>
@@ -601,6 +611,7 @@ function result(){
       </div>
       ${FOOT}
     </div>
+    <div style="position:sticky;bottom:0;padding:28px 24px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(to bottom,rgba(10,10,10,0),#0A0A0A 38%)">${btn("SHARE_YOUR_RESULT","↗","shareScreen()")}</div>
   </div>`);
 }
 
